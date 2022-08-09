@@ -3,7 +3,6 @@ pipeline {
     stages{
         stage('GIT'){
             steps('Checkout'){
-                scripts{
                     checkout([
                         $class: 'GitSCM', 
                         branches: [[name: 'main']], 
@@ -11,7 +10,6 @@ pipeline {
                         //userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/ram-repo/spring-petclinic.git']]
                         userRemoteConfigs: [[url: 'https://github.com/ram-repo/spring-petclinic.git']]
                     ])
-                }
             }
         }
     }
