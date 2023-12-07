@@ -1,19 +1,3 @@
-pipeline {
-    agent {
-        label 'build-agent'
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh "mvn clean package"
-            }
+@Library('my-shared-library') _
 
-            post {
-                success {
-                    junit '**/target/surefire-reports/*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
-        }
-    }
-}
+mavenbuild()
