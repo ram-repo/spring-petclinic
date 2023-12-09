@@ -21,3 +21,5 @@ EXPOSE 8080
 
 # Command to run the Spring PetClinic application
 CMD ["java", "-jar", "target/*.jar"]
+
+# test
